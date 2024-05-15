@@ -1,0 +1,13 @@
+1. Open DevTools -> Network find packet called secure_otp/
+2. find "Seed" copy its value to code below
+
+import random
+
+seed = 1715790803  # Replace with the actual seed value
+random.seed(seed)
+
+for _ in range(6):
+    print(random.randint(0, 9))
+
+3. After running the Python code, you’ll get six random numbers.
+4. Copy these numbers and click “submit”

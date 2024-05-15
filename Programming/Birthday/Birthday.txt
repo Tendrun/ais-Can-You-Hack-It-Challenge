@@ -1,0 +1,7 @@
+Sure, I’d be happy to help you improve this text. Here’s a revised version:
+
+1.Navigate to the sent birthday file. To do this, type “Birthday” in the console, press “Enter”, and then double-click on the function.
+2.Create a breakpoint at line 51, where the code reads “var result = sha256(today.toString());”.
+3.Execute the Birthday_submit() function.
+4.Set the today variable to ‘02/10/1999’ (i.e., today = '02/10/1999').
+I’m not entirely sure how this date is related. I used a tool called Hashcat to reverse engineer this date. The clear indication that SHA256 hashing was used proved to be very helpful. To assist Hashcat, I created a wordlist spanning from 01/01/1975 to 12/24/2024.

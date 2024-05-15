@@ -1,0 +1,2 @@
+1. Find id of element and change its value
+document.getElementById('challengeInput-df21cf9755d9481480a1ebbd2e6d9889-answer').value = 'flag{short/gnu*win}'
