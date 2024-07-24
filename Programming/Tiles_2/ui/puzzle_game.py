@@ -1,9 +1,9 @@
 import tkinter as tk
 import threading
-from services.algorithms import AStar, BreadthFirst
-from services.solver import PuzzleSolver
-from services.puzzle.shuffle import PuzzleShuffleService
-from services.puzzle.constants import (
+from ..services.algorithms import AStar, BreadthFirst
+from ..services.solver import PuzzleSolver
+from ..services.puzzle.shuffle import PuzzleShuffleService
+from ..services.puzzle.constants import (
     HEURISTIC_OPTIONS, HEURISTIC_TOTAL, ALGORITHM_OPTIONS, ASTAR)
 
 

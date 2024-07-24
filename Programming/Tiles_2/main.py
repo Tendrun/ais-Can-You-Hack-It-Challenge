@@ -3,7 +3,7 @@ from ui.puzzle_game import PuzzleGame
 import PyChromeDevTools
 
 def run_ui():
-    connectToGoogle()
+    #connectToGoogle()
     root = tk.Tk()
     PuzzleGame(root)
     root.mainloop()
