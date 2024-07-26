@@ -132,45 +132,44 @@ def test_sorting():
     puzzle_start = Puzzle(
         [
             [
-                2,
-                16,
                 8,
-                5,
-                9
-            ],
-            [
-                11,
                 6,
                 7,
-                3,
-                0
+                13,
+                5
+            ],
+            [
+                1,
+                11,
+                20,
+                2,
+                14
             ],
             [
                 4,
-                1,
-                12,
-                14,
+                17,
+                3,
+                19,
                 18
             ],
             [
-                13,
-                17,
-                23,
-                15,
-                20
+                16,
+                10,
+                12,
+                9,
+                15
             ],
             [
                 21,
-                24,
+                0,
                 22,
-                19,
-                10
+                23,
+                24
             ]
         ]
     )
     s1 = PuzzleSolver(AStar(puzzle_start))
     s1.run()
-    s1.print_solution()
 
 if __name__ == "__main__":
     test_sorting()

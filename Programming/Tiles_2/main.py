@@ -1,12 +1,16 @@
 import tkinter as tk
 from ui.puzzle_game import PuzzleGame
+from tests import tests
 import PyChromeDevTools
 
 def run_ui():
-    #connect_to_google()
     root = tk.Tk()
     PuzzleGame(root)
     root.mainloop()
+
+def run_web_solver():
+    connect_to_google()
+    tests.test_sorting()
 
 def connect_to_google():
     chrome = PyChromeDevTools.ChromeInterface()
@@ -14,4 +18,4 @@ def connect_to_google():
 
 
 if __name__ == "__main__":
-    run_ui()
+    run_web_solver()
