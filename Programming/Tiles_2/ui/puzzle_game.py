@@ -1,9 +1,9 @@
 import tkinter as tk
 import threading
-from ..services.algorithms import AStar, BreadthFirst
-from ..services.solver import PuzzleSolver
-from ..services.puzzle.shuffle import PuzzleShuffleService
-from ..services.puzzle.constants import (
+from services.algorithms import AStar, BreadthFirst
+from services.solver import PuzzleSolver
+from services.puzzle.shuffle import PuzzleShuffleService
+from services.puzzle.constants import (
     HEURISTIC_OPTIONS, HEURISTIC_TOTAL, ALGORITHM_OPTIONS, ASTAR)
 
 
@@ -183,6 +183,16 @@ class PuzzleGame:
         self.num_expanded_nodes = self.solver.get_num_expanded_nodes()
         self.current_step = 0
         self.master.after(0, self.on_solve_complete)
+
+        #region My code
+
+        #endregion
+
+    def format_solution_steps(self):
+        steps_text = 'Moves to resolve this solution:\n'
+        for i, step in enumerate(self.solution_steps):
+            steps_text += f'Step {i+1}: {step}\n'
+        return steps_text
 
     def on_solve_complete(self):
         self.update_tiles()

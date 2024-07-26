@@ -18,6 +18,9 @@ class Puzzle:
         puzzle_string += '—' * puzzle_length + '\n'
         return puzzle_string
 
+    def get_position(self):
+        return self.position
+
     @staticmethod
     def generate_end_position(size):
         end_position = []

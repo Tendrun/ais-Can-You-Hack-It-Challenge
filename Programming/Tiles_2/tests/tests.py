@@ -128,17 +128,49 @@ def test_performance_high_complexity():
     s1.print_solution()
     assert s1.get_num_expanded_nodes() == 873, f"Expected 873 expanded nodes for A* with high complexity, got {s1.get_num_expanded_nodes()}"
 
+def test_sorting():
+    puzzle_start = Puzzle(
+        [
+            [
+                2,
+                16,
+                8,
+                5,
+                9
+            ],
+            [
+                11,
+                6,
+                7,
+                3,
+                0
+            ],
+            [
+                4,
+                1,
+                12,
+                14,
+                18
+            ],
+            [
+                13,
+                17,
+                23,
+                15,
+                20
+            ],
+            [
+                21,
+                24,
+                22,
+                19,
+                10
+            ]
+        ]
+    )
+    s1 = PuzzleSolver(AStar(puzzle_start))
+    s1.run()
+    s1.print_solution()
 
 if __name__ == "__main__":
-    test_generate_end_position()
-    test_generate_random_position()
-    test_swap()
-    test_get_coordinates()
-    test_all_possible_moves()
-    test_heuristic_misplaced()
-    test_heuristic_manhattan_distance()
-    test_unsolvable_puzzle()
-    test_performance_low_complexity()
-    test_performance_mid_complexity()
-    test_performance_high_complexity()
-    print("Everything passed")
+    test_sorting()

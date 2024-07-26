@@ -20,7 +20,8 @@ class AStar(IStrategy):
         self.start = initial_puzzle
         self.end_position = Puzzle.generate_end_position(len(initial_puzzle.position))
         self.puzzle_heuristic_service = PuzzleHeuristicService(self.end_position)
-        self.heuristic_function = self.heuristic_functions[HEURISTIC_TOTAL]  # combined heuristic as default, should work
+        self.heuristic_function = self.heuristic_functions[
+            HEURISTIC_TOTAL]  # combined heuristic as default, should work
         self.should_stop = False
 
         if heuristic:
@@ -45,6 +46,7 @@ class AStar(IStrategy):
             if current_node.position == self.end_position:
                 self.num_expanded_nodes = num_expanded_nodes
                 self.solution = current_path[1:]
+                self.get_moves_with_directions(self.solution)
                 return self.solution
 
             if tuple(map(tuple, current_node.position)) in expanded:
@@ -71,3 +73,58 @@ class AStar(IStrategy):
 
     def stop(self):
         self.should_stop = True
+
+    def get_moves_with_directions(self, nodes):
+
+        iteration = 0
+        nodeOld = [[]]
+        moves = ""
+
+        for nodeNew in nodes:
+            print(iteration)
+            print("Node Old = ", nodeOld)
+            print("Node New = ", nodeNew)
+
+            nodeNewX = 0
+            nodeNewY = 0
+
+            nodeNewPos = nodeNew.get_position()
+            for i in range(len(nodeNewPos)):
+                for j in range(len(nodeNewPos[i])):
+                    if nodeNewPos[i][j] == 0:
+                        nodeNewX = j
+                        nodeNewY = i
+                        break
+
+            nodeOldX = 0
+            nodeOldY = 0
+
+            if iteration != 0:
+                nodeOldPos = nodeOld.get_position()
+                for i in range(len(nodeOldPos)):
+                    for j in range(len(nodeOldPos)):
+                        if nodeOldPos[j][i] == 0:
+                            nodeOldX = i
+                            nodeOldY = j
+                            break
+
+            print("nodeOldX ", nodeOldX)
+            print("nodeOldY ", nodeOldY)
+
+            print("nodeNewX ", nodeNewX)
+            print("nodeNewY ", nodeNewY)
+
+            if iteration == 0:  #skip first iteration
+                pass
+            elif nodeOldY > nodeNewY:  # Up
+                moves += "U,"
+            elif nodeOldY < nodeNewY:  # Down
+                moves += "D,"
+            elif nodeOldX > nodeNewX:  # Left
+                moves += "L,"
+            elif nodeOldX < nodeNewX:  # Right
+                moves += "R,"
+
+            nodeOld = nodeNew
+            iteration += 1
+            print(moves)

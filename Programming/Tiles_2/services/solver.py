@@ -20,6 +20,9 @@ class PuzzleSolver:
         for s in self._strategy.solution:
             print(s)
 
+    def get_strategy_solution(self):
+        return self._strategy
+
     def get_num_expanded_nodes(self):
         return self._strategy.num_expanded_nodes
 

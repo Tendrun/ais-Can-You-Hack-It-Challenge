@@ -3,14 +3,14 @@ from ui.puzzle_game import PuzzleGame
 import PyChromeDevTools
 
 def run_ui():
-    #connectToGoogle()
+    #connect_to_google()
     root = tk.Tk()
     PuzzleGame(root)
     root.mainloop()
 
-def connectToGoogle():
+def connect_to_google():
     chrome = PyChromeDevTools.ChromeInterface()
-    chrome = PyChromeDevTools.ChromeInterface(host="1.1.1.1",port=1234)
+    chrome = PyChromeDevTools.ChromeInterface(host="localhost",port=9222)
 
 
 if __name__ == "__main__":
