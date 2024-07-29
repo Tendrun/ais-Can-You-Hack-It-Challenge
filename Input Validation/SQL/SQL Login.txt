@@ -1,0 +1,3 @@
+1. Write "' or 1=1--" This will result in output of all database 
+2. Find password of user you are looking for  
+3. In my cenario i was looking for fry password w4ts-w/-th3-17-dungbeetles

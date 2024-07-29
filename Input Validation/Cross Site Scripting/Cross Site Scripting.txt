@@ -1,0 +1,7 @@
+Image URL:
+https://hack.ainfosec.com/static/hackerchallenge/img/smile-cookie.png
+
+1. F12
+2. Application > find admin_sess_id "flag_should_be_here%20%F0%9F%A4%94"
+4. The value after decoding is 🤔, no joke
+5. 
