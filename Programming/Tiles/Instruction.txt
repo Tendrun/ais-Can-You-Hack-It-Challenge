@@ -1,0 +1,3 @@
+1. Open the program in your IDE.
+2. Change the value of puzzle_start in the test_sorting() function based on what is printed on https://hack.ainfosec.com/.
+3. After a while, the program will print the output; copy and paste it into the website.

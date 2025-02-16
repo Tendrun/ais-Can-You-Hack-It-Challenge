@@ -1,0 +1,5 @@
+1. You have to take the highest frequency of each 1 second interval
+2. Change them to ASCII 
+3. THIS IT IT "flagIsN0i5Y"
+
+With code below you can complete this challenge
